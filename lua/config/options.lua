@@ -18,6 +18,7 @@ vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
+vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
 
 vim.opt.cmdheight = 0
 
