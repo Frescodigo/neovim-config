@@ -25,7 +25,16 @@ return {
 					"ts_ls",
 					"html",
 					"gopls",
-				}
+				},
+                clangd = function()
+                    require('lspconfig').clangd.setup({
+                        cmd = {
+                            "clangd",
+                            "--background-index",
+                            "--header-insertion=never"
+                        }
+                    })
+                end
 			})
 		end
 	}
