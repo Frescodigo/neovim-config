@@ -29,10 +29,12 @@ return {
 			})
             handlers = {
                 clangd = function()
-                    cmd = {
-                        "clangd",
-                        "--header-insertion=never"
-                    }
+                    require('lspconfig').clangd.setup({
+                        cmd = {
+                            "clangd",
+                            "--header-insertion=never"
+                        }
+                    })
                 end
             }
 		end
