@@ -26,16 +26,15 @@ return {
 					"html",
 					"gopls",
 				},
-                clangd = function()
-                    require('lspconfig').clangd.setup({
-                        cmd = {
-                            "clangd",
-                            "--background-index",
-                            "--header-insertion=never"
-                        }
-                    })
-                end
 			})
+            handlers = {
+                clangd = function()
+                    cmd = {
+                        "clangd",
+                        "--header-insertion=never"
+                    }
+                end
+            }
 		end
 	}
 }
