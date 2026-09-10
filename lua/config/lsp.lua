@@ -1,7 +1,3 @@
--- vim.lsp.config['clangd'] = {
--- 	cmd = { 'clangd' },
--- 	filetype = { 'c', 'h', },
--- }
 vim.lsp.config['lua_ls'] = {
 	cmd = { 'lua-language-server' },
 	filetypes = { 'lua' },
@@ -15,11 +11,12 @@ vim.lsp.config['lua_ls'] = {
 	}
 }
 
-vim.cmd[[set completeopt+=menuone,noselect,popup]]
-
 vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { silent = true })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Fromat local buffer" })
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend("force", capabilities, require("mini.completion").get_lsp_capabilities())
 
-
-
+vim.lsp.config("*", { capabilities = capabilities })
 

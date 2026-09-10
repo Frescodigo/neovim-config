@@ -20,6 +20,9 @@ vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
 vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
 
+vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
+vim.opt.shortmess:append("c")
+
 vim.opt.cmdheight = 0
 
 vim.cmd [[autocmd FileType * set formatoptions-=ro]]
