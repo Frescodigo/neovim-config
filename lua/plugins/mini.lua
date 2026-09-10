@@ -77,11 +77,15 @@ return {
 			snippets = {
 				MiniSnippets.gen_loader.from_lang(),
 			},
+			expand = {
+				insert = function (snippet)
+					MiniSnippets.default_insert(snippet, { empty_tabstop = "", empty_tabstop_final = "" })
+				end
+			}
 		})
 		MiniSnippets.start_lsp_server({ match = false })
 	end
 }
-
 
 
 
