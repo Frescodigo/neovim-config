@@ -84,6 +84,16 @@ return {
 			}
 		})
 		MiniSnippets.start_lsp_server({ match = false })
+
+        vim.api.nvim_create_autocmd("ColorScheme", {
+            callback = function()
+                vim.api.nvim_set_hl(0, "MiniSnippetsCurrent", {})
+                vim.api.nvim_set_hl(0, "MiniSnippetsCurrentReplace", {})
+                vim.api.nvim_set_hl(0, "MiniSnippetsFinal", {})
+                vim.api.nvim_set_hl(0, "MiniSnippetsUnvisited", {})
+                vim.api.nvim_set_hl(0, "MiniSnippetsVisited", {})
+            end
+        })
 	end
 }
 
