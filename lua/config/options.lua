@@ -18,7 +18,10 @@ vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
-vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
+vim.diagnostic.config({
+	virtual_text = true,
+	underline = true,
+})
 
 vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 vim.opt.shortmess:append("c")
